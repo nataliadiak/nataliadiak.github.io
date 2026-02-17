@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Nataliya Dyak | Software Developer</title>
@@ -11,243 +12,12 @@
   <meta property="og:title" content="Nataliya Dyak | Software Developer" />
   <meta property="og:description" content="React + Scala developer with enterprise experience." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1581545089841-9423c2ec0548?q=80&w=1200&auto=format&fit=crop" />
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
-  <style>
-    :root {
-      --bg-dark: #050509;
-      --accent: #00f2ff;
-      --text-main: #ffffff;
-      --text-muted: rgba(255, 255, 255, 0.7);
-      --gradient-primary: linear-gradient(135deg, #00f2ff, #ff00f2, #f2ff00);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Background layers */
-    .bg-container {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-    }
-
-    .bg-layer {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      transition: opacity 0.4s ease-out;
-    }
-
-    #bg-mountain {
-      background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop");
-      opacity: 1;
-    }
-
-    #bg-city {
-      background-image: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2070&auto=format&fit=crop");
-      opacity: 0;
-    }
-
-    .bg-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.5), #050509 70%);
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(5,5,9,0.7);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      z-index: 10;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.2rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      padding-bottom: 2px;
-      transition: color 0.2s ease;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--text-main);
-    }
-
-    /* Hero */
-    main { padding-top: 5rem; }
-
-    section {
-      min-height: 100vh;
-      padding: 4rem 8vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-label {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .hero-title {
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      margin-bottom: 2rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 18px rgba(0,0,0,0.7);
-    }
-
-    .scroll-prompt {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      width: fit-content;
-      padding-bottom: 2px;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .scroll-prompt:hover {
-      color: var(--text-main);
-      border-color: var(--accent);
-    }
-
-    /* Sections */
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .card {
-      padding: 1.5rem;
-      border-radius: 12px;
-      background: rgba(5,5,9,0.75);
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      background: rgba(5,5,9,0.9);
-    }
-
-    .card-role {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .card-title {
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .card-text {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .tag {
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    footer {
-      padding: 3rem 8vw 2rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .cta-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      color: var(--text-main);
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-
-    .cta-link:hover {
-      background: rgba(255,255,255,0.06);
-    }
-
-    @media (max-width: 768px) {
-      nav { flex-direction: column; gap: 0.5rem; padding: 0.8rem 1.5rem; }
-      section { padding: 4rem 1.5rem; }
-      .hero-title { font-size: clamp(2.4rem, 9vw, 3.4rem); }
-    }
-  </style>
+  <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
@@ -258,7 +28,7 @@
   </div>
 
   <nav>
-    <div class="logo">NATALIYA DYAK</div>
+    <a href="#" class="logo">NATALIYA DYAK</a>
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
@@ -269,13 +39,13 @@
   </nav>
 
   <main>
-    <section class="hero">
+    <section id="hero" class="hero section">
       <div class="hero-label">Software Developer</div>
       <h1 class="hero-title">React + Scala<br>Enterprise Experience</h1>
       <a href="#work" class="scroll-prompt">Scroll to Explore ↓</a>
     </section>
 
-    <section id="work">
+    <section id="work" class="work section">
       <div class="section-label">Selected Experience</div>
       <h2 class="section-title">Engineering Journey</h2>
 
@@ -306,16 +76,16 @@
       </div>
     </section>
 
-    <section id="skills">
-      <div class="section-label">Technical Stack</div>
-      <h2 class="section-title">The Toolkit</h2>
+    <section id="skills" class="toolkit section">
+      <h2>Toolkit</h2>
+      <p class="subtitle">The technologies behind my work.</p>
 
       <div class="tags">
-        <span class="tag">Scala · FP</span>
-        <span class="tag">React · Frontend</span>
-        <span class="tag">AWS · Cloud</span>
-        <span class="tag">Docker · Containers</span>
-        <span class="tag">UA / CZ / EN</span>
+        <span class="tag">Scala • FP</span>
+        <span class="tag">React • Frontend</span>
+        <span class="tag">AWS • Cloud</span>
+        <span class="tag">Docker • Containers</span>
+        <span class="tag">UA • CZ • EN</span>
       </div>
     </section>
   </main>
@@ -326,31 +96,7 @@
     <div style="margin-top: 1.5rem;">© 2026 Nataliya Dyak.</div>
   </footer>
 
-  <script>
-    // Scroll-based background transition
-    let ticking = false;
-
-    function updateBackground() {
-      const scrollY = window.scrollY;
-      const h = window.innerHeight;
-      const start = h * 0.3;
-      const end = h * 1.2;
-
-      let t = 0;
-      if (scrollY > start) {
-        t = Math.min(1, (scrollY - start) / (end - start));
-      }
-
-      document.getElementById("bg-city").style.opacity = t;
-      ticking = false;
-    }
-
-    window.addEventListener("scroll", () => {
-      if (!ticking) {
-        requestAnimationFrame(updateBackground);
-        ticking = true;
-      }
-    }, { passive: true });
-  </script>
+  <script src="index.js"></script>
 </body>
+
 </html>
